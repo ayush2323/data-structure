@@ -1,0 +1,125 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *next;
+};
+Node *head = NULL;
+
+class linkedList
+{
+    public:
+    void add(int d)
+    {
+        Node *ptr = new Node;
+        ptr -> data = d;
+        ptr -> next = NULL;
+        
+        
+        // insertion of node at head
+        if (head == NULL)
+        {
+            head = ptr;
+        }
+        else
+        
+        // insertion of node at end
+        {
+            Node *temp = head;
+            while (temp -> next != NULL)
+            {
+                temp = temp -> next;
+            }
+            temp -> next = ptr;
+        }
+        // cout<<ptr -> data<<endl;
+    }
+            
+    void remove()
+    {
+        Node *ptr, *prev;
+        if (head == NULL)
+        {
+            cout<<"list is empty"<<endl;
+        }   
+        else
+        {
+            ptr = head;
+            // deleting node at head
+            if (head -> next == NULL)
+            {
+                head = head -> next;
+                cout<<"deleted data is: "<<ptr -> data<<endl;
+                free(ptr);
+            }
+            
+            // deleting node at end
+            else
+            {
+                while (ptr -> next != NULL)
+                {
+                    prev = ptr;
+                    ptr = ptr -> next;
+                }
+                prev -> next = NULL;
+                cout<<"deleted data is: "<<ptr -> data<<endl;
+                free(ptr);
+            }
+        }
+    }
+
+    void search(int number)
+    {
+      Node *temp = head;
+      int position = 1; 
+      while(temp != NULL)
+      {
+        if(temp -> data == number)
+        {
+          cout<<"data is present at "<<position<<" position"<<endl;
+          return;
+        }
+        temp = temp -> next;
+        position++;
+      }
+      cout<<"data is not present in linked list"<<endl;
+    }
+
+    void display()
+    {
+        if (head == NULL)
+        {
+            cout<<"\nlinkedlist is empty\n"<<endl;
+        }
+        else
+        {
+            Node *temp = head;
+            cout<<endl;
+            cout<<"data in list is: "<<endl;
+            while(temp != NULL)
+            {
+                cout<<temp -> data<<" ";
+                temp = temp -> next;            
+            }
+            cout<<endl;
+        }
+    }
+};
+    
+int main()
+{
+    linkedList *linkedlist = new linkedList;
+
+    linkedlist -> add(10);
+    linkedlist -> add(20);    
+    linkedlist -> add(30);
+    linkedlist -> add(40);    
+    linkedlist -> add(50);
+
+    linkedlist -> display();
+
+    linkedlist -> search(50);
+
+}
