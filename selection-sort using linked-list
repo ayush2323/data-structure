@@ -58,6 +58,25 @@ class LinkedList
       i = i -> next;
     }
   }
+  
+  /*  void selection_sort()
+  {
+    for(Node *i = head; i != NULL; i = i -> next)
+    {
+      Node *min = i;
+      for(Node *j = i -> next; j != NULL; j = j -> next)
+      {
+        if(min -> data > j -> data)
+        {
+          min = j;
+        }
+      }
+      int temp = min -> data;
+      min -> data = i -> data;
+      i -> data = temp;
+    }
+  }
+  */
 
   void display()
   {
