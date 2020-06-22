@@ -19,24 +19,6 @@ void heapify(int arr[], int n, int i)
     largest = r;
   }
 
-  // if(r < n && l < n)
-  // {
-  //   if(arr[r] > arr[l])
-  //   {
-  //     if(arr[r] > arr[largest])
-  //     {
-  //       largest = r;
-  //     }
-  //   }
-  //   else
-  //   {
-  //     if(arr[l] > arr[largest])
-  //     {
-  //       largest = l;
-  //     }
-  //   }
-  // }
-
   // if larger is not root
   if(largest != i)
   {
