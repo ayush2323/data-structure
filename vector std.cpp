@@ -141,6 +141,9 @@ int main() {
   cout<<it2 - it<<endl;
 
   sort(arr6.begin(), arr6.end(), f);
+  
+  arr6.erase(arr6.begin()); // delete first element
+  arr6.erase(arr6.begin() + 1); // delete second element
 
   for(int x : arr6) // another method to iterate
   {
