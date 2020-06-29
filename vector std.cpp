@@ -112,4 +112,45 @@ int main() {
     cout<<arr2[i]<<" ";
   }
   cout<<endl;
+  
+  vector<int>arr6 = {100,46,24,76};
+
+  sort(arr6.begin(), arr6.end());
+
+  arr6.push_back(100);
+  arr6.push_back(100);
+  arr6.push_back(100);
+  arr6.push_back(100);
+
+  vector<int>:: iterator it3;
+
+  for(it3 = arr6.begin(); it3 != arr6.end(); it3++)
+  {
+    cout<<*it3<<" ";
+  }
+  cout<<endl;
+
+  bool present = binary_search(arr6.begin(), arr6.end(), 76);
+  present = binary_search(arr6.begin(), arr6.end(), 79);
+
+  auto it = lower_bound(arr6.begin(), arr6.end(), 100); // another easier way to iterate
+
+  vector<int>::iterator it2 = upper_bound(arr6.begin(), arr6.end(), 100);
+
+  cout<< *it <<" "<< *it2 <<endl;
+  cout<<it2 - it<<endl;
+
+  sort(arr6.begin(), arr6.end(), f);
+
+  for(int x : arr6) // another method to iterate
+  {
+    cout<<x<<" ";
+  }
+  cout<<endl;
+
+  for(int &x : arr6) // reference
+  {
+    x++;
+  }
+  cout<<endl;
 }
